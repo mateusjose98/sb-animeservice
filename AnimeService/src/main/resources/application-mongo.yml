@@ -1,0 +1,4 @@
+db:
+  url: mongodb://localhost:27017/mongoanime
+  username: rootmongo
+  password: rootmongo

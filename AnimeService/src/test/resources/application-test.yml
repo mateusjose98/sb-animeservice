@@ -1,0 +1,4 @@
+db:
+  url: testesmane
+  username: usuarioteste
+  password: testando
