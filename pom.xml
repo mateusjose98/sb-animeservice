@@ -11,6 +11,7 @@
 
     <modules>
         <module>AnimeService</module>
+        <module>UserService</module>
     </modules>
 
 

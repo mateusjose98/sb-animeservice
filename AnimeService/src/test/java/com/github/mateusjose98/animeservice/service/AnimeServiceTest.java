@@ -2,6 +2,8 @@ package com.github.mateusjose98.animeservice.service;
 
 import com.github.mateusjose98.animeservice.domain.Anime;
 import com.github.mateusjose98.animeservice.domain.Producer;
+import com.github.mateusjose98.animeservice.exception.CustomNotFoundException;
+import com.github.mateusjose98.animeservice.exception.NotFoundException;
 import com.github.mateusjose98.animeservice.repository.AnimeHardCodedRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -89,7 +91,7 @@ class AnimeServiceTest {
     void findByIdOrThrowNotFoundThrowsException() {
         BDDMockito.when(repository.findById(1L)).thenReturn(Optional.empty());
         Assertions.assertThatThrownBy(() -> animeService.findByIdOrThrowNotFound(1L))
-                .isInstanceOf(ResponseStatusException.class);
+                .isInstanceOf(CustomNotFoundException.class);
     }
 
     @Test
@@ -114,6 +116,6 @@ class AnimeServiceTest {
     void deleteThrowsException() {
         BDDMockito.when(repository.findById(1L)).thenReturn(Optional.empty());
         Assertions.assertThatThrownBy(() -> animeService.delete(1L))
-                .isInstanceOf(ResponseStatusException.class);
+                .isInstanceOf(CustomNotFoundException.class);
     }
 }

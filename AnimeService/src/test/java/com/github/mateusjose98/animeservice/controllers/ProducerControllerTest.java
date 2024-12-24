@@ -125,8 +125,7 @@ class ProducerControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get(URL + "/{id}", id))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isNotFound())
-                .andExpect(MockMvcResultMatchers.status().reason("Producer not Found"));
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
     }
 
     @Test
