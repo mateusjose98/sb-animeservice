@@ -1,8 +1,10 @@
 package com.github.mateusjose98.animeservice.service;
 
 import com.github.mateusjose98.animeservice.domain.Anime;
-import com.github.mateusjose98.animeservice.exception.CustomNotFoundException;
+
 import com.github.mateusjose98.animeservice.repository.AnimeHardCodedRepository;
+import com.github.mateusjose98.exception.CustomNotFoundException;
+import com.github.mateusjose98.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +22,7 @@ public class AnimeService {
 
     public Anime findByIdOrThrowNotFound(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new CustomNotFoundException("Anime not Found"));
+                .orElseThrow(() -> new NotFoundException("Anime not Found"));
     }
 
     public Anime save(Anime anime) {

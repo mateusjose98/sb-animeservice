@@ -4,7 +4,6 @@ import com.github.mateusjose98.animeservice.commons.FileUtils;
 import com.github.mateusjose98.animeservice.commons.ProducerUtils;
 import com.github.mateusjose98.animeservice.domain.Producer;
 import com.github.mateusjose98.animeservice.mapper.ProducerMapper;
-import com.github.mateusjose98.animeservice.mapper.ProducerMapperImpl;
 import com.github.mateusjose98.animeservice.repository.ProducerData;
 import com.github.mateusjose98.animeservice.repository.ProducerHardCodedRepository;
 import com.github.mateusjose98.animeservice.service.ProducerService;
@@ -178,8 +177,7 @@ class ProducerControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isNotFound())
-                .andExpect(MockMvcResultMatchers.status().reason("Producer not Found"));
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
 
     }
 
@@ -204,8 +202,7 @@ class ProducerControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.delete(URL + "/{id}", id))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isNotFound())
-                .andExpect(MockMvcResultMatchers.status().reason("Producer not Found"));
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
 
     }
 

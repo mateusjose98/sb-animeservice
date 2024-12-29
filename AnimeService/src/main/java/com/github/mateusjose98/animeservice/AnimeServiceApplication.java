@@ -7,10 +7,13 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 // adiciona nas vm options isso: -Xmx500m -XshowSettings:vm
 @SpringBootApplication
 @EnableConfigurationProperties(value = {ConnectionConfigProperties.class})
+@ComponentScan(basePackages = {"com.github.mateusjose98"})
 public class AnimeServiceApplication implements CommandLineRunner {
 
     public static void main(String[] args) {

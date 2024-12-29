@@ -1,8 +1,9 @@
 package com.github.mateusjose98.animeservice.service;
 
 import com.github.mateusjose98.animeservice.domain.Producer;
-import com.github.mateusjose98.animeservice.exception.CustomNotFoundException;
+
 import com.github.mateusjose98.animeservice.repository.ProducerHardCodedRepository;
+import com.github.mateusjose98.exception.NotFoundException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -91,7 +92,7 @@ class ProducerServiceTest {
     void findByIdOrThrowNotFoundThrowsException() {
         BDDMockito.when(repository.findById(1L)).thenReturn(Optional.empty());
         Assertions.assertThatThrownBy(() -> producerService.findByIdOrThrowNotFound(1L))
-                .isInstanceOf(CustomNotFoundException.class);
+                .isInstanceOf(NotFoundException.class);
     }
 
     @Test
@@ -116,6 +117,6 @@ class ProducerServiceTest {
     void deleteThrowsException() {
         BDDMockito.when(repository.findById(1L)).thenReturn(Optional.empty());
         Assertions.assertThatThrownBy(() -> producerService.delete(1L))
-                .isInstanceOf(CustomNotFoundException.class);
+                .isInstanceOf(NotFoundException.class);
     }
 }

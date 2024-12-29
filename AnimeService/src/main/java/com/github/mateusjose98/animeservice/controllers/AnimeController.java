@@ -1,6 +1,6 @@
 package com.github.mateusjose98.animeservice.controllers;
 
-import com.github.mateusjose98.animeservice.domain.Anime;
+
 import com.github.mateusjose98.animeservice.mapper.AnimeMapper;
 import com.github.mateusjose98.animeservice.request.AnimePostRequest;
 import com.github.mateusjose98.animeservice.request.AnimePutRequest;

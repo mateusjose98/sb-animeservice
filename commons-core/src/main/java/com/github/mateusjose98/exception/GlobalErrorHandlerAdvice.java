@@ -1,4 +1,4 @@
-package com.github.mateusjose98.animeservice.exception;
+package com.github.mateusjose98.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,9 @@
 package com.github.mateusjose98.animeservice.service;
 
 import com.github.mateusjose98.animeservice.domain.Producer;
-import com.github.mateusjose98.animeservice.exception.CustomNotFoundException;
-import com.github.mateusjose98.animeservice.exception.NotFoundException;
+
 import com.github.mateusjose98.animeservice.repository.ProducerHardCodedRepository;
+import com.github.mateusjose98.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

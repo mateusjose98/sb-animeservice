@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @WebMvcTest(controllers = AnimeController.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@ComponentScan(basePackages = "com.github.mateusjose98.animeservice")
+@ComponentScan(basePackages = "com.github.mateusjose98")
 class AnimeControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -113,8 +113,7 @@ class AnimeControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/animes/{id}", id))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isNotFound())
-                .andExpect(MockMvcResultMatchers.status().reason("Anime not Found"));
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
     }
 
     @Test
@@ -167,8 +166,7 @@ class AnimeControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isNotFound())
-                .andExpect(MockMvcResultMatchers.status().reason("Anime not Found"));
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
 
     }
 
@@ -194,8 +192,7 @@ class AnimeControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/v1/animes/{id}", id))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isNotFound())
-                .andExpect(MockMvcResultMatchers.status().reason("Anime not Found"));
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
 
     }
 
