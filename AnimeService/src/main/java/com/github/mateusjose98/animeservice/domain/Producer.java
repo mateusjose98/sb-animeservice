@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Producer {
+
     @EqualsAndHashCode.Include
     private Long id;
     @JsonProperty("name")

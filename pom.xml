@@ -13,7 +13,6 @@
         <module>commons-core</module>
         <module>AnimeService</module>
         <module>UserService</module>
-
     </modules>
 
 

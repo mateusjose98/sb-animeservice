@@ -12,11 +12,22 @@ public class ProducerData {
 
     private final List<Producer> PRODUCERS = new ArrayList<>();
 
-     {
-        var mappa = Producer.builder().id(1L).name("Mappa").createdAt(LocalDateTime.now()).build();
-        var kyotoAnimation = Producer.builder().id(2L).name("Kyoto Animation").createdAt(LocalDateTime.now()).build();
-        var madhouse = Producer.builder().id(3L).name("Madhouse").createdAt(LocalDateTime.now()).build();
-        PRODUCERS.addAll(List.of(mappa, kyotoAnimation, madhouse));
+    {
+        var mappa = Producer.builder()
+                .id(1L).name("Mappa")
+                .createdAt(LocalDateTime.now())
+                .build();
+        var kyotoAnimation = Producer.builder()
+                .id(2L).name("Kyoto Animation")
+                .createdAt(LocalDateTime.now())
+                .build();
+        var madhouse = Producer.builder()
+                .id(3L).name("Madhouse")
+                .createdAt(LocalDateTime.now())
+                .build();
+        PRODUCERS.addAll(
+                List.of(mappa, kyotoAnimation,
+                        madhouse));
     }
 
     public List<Producer> findAll() {

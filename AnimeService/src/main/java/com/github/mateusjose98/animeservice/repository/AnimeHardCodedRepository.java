@@ -11,7 +11,8 @@ public class AnimeHardCodedRepository {
 
     private final AnimeData animeData;
 
-    public AnimeHardCodedRepository(AnimeData animeData) {
+    public AnimeHardCodedRepository(
+            AnimeData animeData) {
         this.animeData = animeData;
     }
 
@@ -19,12 +20,19 @@ public class AnimeHardCodedRepository {
         return animeData.findAll();
     }
 
-    public Optional<Anime> findById(Long id) {
-        return animeData.findAll().stream().filter(anime -> anime.getId().equals(id)).findFirst();
+    public Optional<Anime> findById(
+            Long id) {
+        return animeData.findAll().stream()
+                .filter(anime -> anime.getId()
+                        .equals(id)).findFirst();
     }
 
-    public List<Anime> findByName(String name) {
-        return animeData.findAll().stream().filter(anime -> anime.getName().equalsIgnoreCase(name)).toList();
+    public List<Anime> findByName(
+            String name) {
+        return animeData.findAll().stream()
+                .filter(anime -> anime.getName()
+                        .equalsIgnoreCase(name))
+                .toList();
     }
 
     public Anime save(Anime anime) {

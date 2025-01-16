@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 @Builder
 public class ProducerPostResponse {
+
     private Long id;
     private String name;
 }

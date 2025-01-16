@@ -13,15 +13,21 @@ import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface AnimeMapper {
+
     @Mapping(target = "id", expression = "java(java.util.concurrent.ThreadLocalRandom.current().nextLong(100_000))")
-    Anime toAnime(AnimePostRequest postRequest);
+    Anime toAnime(
+            AnimePostRequest postRequest);
 
-    Anime toAnime(AnimePutRequest request);
+    Anime toAnime(
+            AnimePutRequest request);
 
-    AnimePostResponse toAnimePostResponse(Anime anime);
+    AnimePostResponse toAnimePostResponse(
+            Anime anime);
 
-    AnimeGetResponse toAnimeGetResponse(Anime anime);
+    AnimeGetResponse toAnimeGetResponse(
+            Anime anime);
 
-    List<AnimeGetResponse> toAnimeGetResponseList(List<Anime> animes);
+    List<AnimeGetResponse> toAnimeGetResponseList(
+            List<Anime> animes);
 
 }

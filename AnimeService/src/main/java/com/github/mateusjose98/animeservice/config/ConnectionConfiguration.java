@@ -22,12 +22,18 @@ public class ConnectionConfiguration {
 
     @Bean(name = "abacaxi")
     public Connection connectionMySql() {
-        return new Connection(connectionConfigProperties.url(), connectionConfigProperties.username(), connectionConfigProperties.password());
+        return new Connection(
+                connectionConfigProperties.url(),
+                connectionConfigProperties.username(),
+                connectionConfigProperties.password());
     }
 
     @Bean(name = "connectionMongoDB")
 //    @Primary
     public Connection connectionMongo() {
-        return new Connection(connectionConfigProperties.url(), connectionConfigProperties.username(), connectionConfigProperties.password());
+        return new Connection(
+                connectionConfigProperties.url(),
+                connectionConfigProperties.username(),
+                connectionConfigProperties.password());
     }
 }

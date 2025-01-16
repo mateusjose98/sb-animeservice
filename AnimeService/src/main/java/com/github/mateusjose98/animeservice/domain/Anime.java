@@ -15,7 +15,10 @@ public class Anime {
     private String name;
 
     public static List<Anime> getAnimes() {
-        return List.of(new Anime(1L, "Naruto"), new Anime(2L, "Dragon Ball"), new Anime(3L, "One Piece"));
+        return List.of(
+                new Anime(1L, "Naruto"),
+                new Anime(2L, "Dragon Ball"),
+                new Anime(3L, "One Piece"));
     }
 
 }

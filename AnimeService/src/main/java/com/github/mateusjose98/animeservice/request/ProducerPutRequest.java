@@ -10,6 +10,7 @@ import lombok.ToString;
 @Builder
 @ToString
 public class ProducerPutRequest {
+
     private Long id;
     private String name;
 
